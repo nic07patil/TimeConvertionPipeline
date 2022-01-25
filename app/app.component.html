@@ -1,0 +1,12 @@
+<p>Start editing to see some magic happen :)</p>
+<mat-radio-group aria-label="Select an option" [(ngModel)]="timezone">
+  <mat-radio-button
+    *ngFor="let zone of timezoneList"
+    (change)="selectState(zone)"
+    value="{{ zone }}"
+    >{{ zone }}</mat-radio-button
+  >
+</mat-radio-group>
+<br />
+<p>{{ StartTime | toLocalTime: timezone }}</p>
+<p>{{ EndTime | toLocalTime: timezone }}</p>
